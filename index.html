@@ -12,6 +12,11 @@
       href="./images/favicon-32x32.png"
     />
 
+    <!-- resetear los estilos para todos los navegadores -->
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <!-- mis estilos -->
+    <link rel="stylesheet" href="./css/social_media_style.css" />
+
     <title>Frontend Mentor | [Challenge Name Here]</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -26,130 +31,167 @@
     </style>
   </head>
   <body>
-    <head>
-      <h1>Social Media Dashboard</h1>
-      <p>Total Followers: 23,004</p>
-      <p>Dark Mode</p>
-    </head>
-    <main>
-      <section>
-        <article>
-          <p>
-            <span><img src="./images/icon-facebook.svg" alt="" /></span>
-            @nathanf
-          </p>
-          <p>1987</p>
-          <p>Followers</p>
-          <p><span></span> 12 Today</p>
-        </article>
-        <article>
-          <p>
-            <span><img src="./images/icon-twitter.svg" alt="" /></span>@nathanf
-          </p>
-          <p>1044</p>
-          <p>Followers</p>
-          <p>99 Today</p>
-        </article>
-        <article>
-          <p>
-            <span><img src="./images/icon-instagram.svg" alt="" /></span
-            >@realnathanf
-          </p>
-          <p>11k</p>
-          <p>Followers</p>
-          <p>1099 Today</p>
-        </article>
-        <article>
-          <p>
-            <span><img src="./images/icon-youtube.svg" alt="" /></span>Nathan F.
-          </p>
-          <p>8239</p>
-          <p>Subscribers</p>
-          <p>144 Today</p>
-        </article>
-      </section>
-      <p>Overview - Today</p>
-      <section>
-        <article>
-          <p>
-            Page Views<span
-              ><img src="./images/icon-facebook.svg" alt=""
-            /></span>
-          </p>
-          <p>
-            87
-            <span>3%</span>
-          </p>
-        </article>
-        <article>
-          <p>
-            Likes<span><img src="./images/icon-facebook.svg" alt="" /></span>
-          </p>
-          <p>
-            52
-            <span>2%</span>
-          </p>
-        </article>
-        <article>
-          <p>
-            Likes<span><img src="./images/icon-instagram.svg" alt="" /></span>
-          </p>
-          <p>
-            5462
-            <span>2257%</span>
-          </p>
-        </article>
-        <article>
-          <p>
-            Profile Views<span
-              ><img src="./images/icon-instagram.svg" alt=""
-            /></span>
-          </p>
-          <p>
-            52k
-            <span>1375%</span>
-          </p>
-        </article>
-        <article>
-          <p>
-            Retweets<span><img src="./images/icon-twitter.svg" alt="" /></span>
-          </p>
-          <p>
-            117
-            <span>303%</span>
-          </p>
-        </article>
-        <article>
-          <p>
-            Likes<span><img src="./images/icon-twitter.svg" alt="" /></span>
-          </p>
-          <p>
-            507
-            <span>557%</span>
-          </p>
-        </article>
-        <article>
-          <p>
-            Likes<span><img src="./images/icon-youtube.svg" alt="" /></span>
-          </p>
-          <p>
-            107
-            <span>19%</span>
-          </p>
-        </article>
-        <article>
-          <p>
-            Total Views<span
-              ><img src="./images/icon-youtube.svg" alt=""
-            /></span>
-          </p>
-          <p>
-            1407
-            <span>12%</span>
-          </p>
-        </article>
-      </section>
-    </main>
+    <div class="container">
+      <header>
+        <h1 class="title">Social Media Dashboard</h1>
+        <p class="subtitle">Total Followers: 23,004</p>
+        <hr />
+        <div class="mode-box">
+          <p>Dark Mode</p>
+          <div class="btn-box">
+            <input type="button" value="" class="mode-btn" />
+          </div>
+        </div>
+      </header>
+      <main>
+        <section class="stats1-container">
+          <article class="stats-card facebook-card">
+            <p class="user-name">
+              <img src="./images/icon-facebook.svg" alt="" />
+              @nathanf
+            </p>
+            <p class="number-data">1987</p>
+            <p class="text">Followers</p>
+            <p class="days up">
+              <img src="./images/icon-up.svg" alt="" /><span>12 Today</span>
+            </p>
+          </article>
+          <article class="stats-card twitter-card">
+            <p class="user-name">
+              <span><img src="./images/icon-twitter.svg" alt="" /></span
+              >@nathanf
+            </p>
+            <p class="number-data">1044</p>
+            <p class="text">Followers</p>
+            <p class="days up">
+              <img src="./images/icon-up.svg" alt="" />99 Today
+            </p>
+          </article>
+          <article class="stats-card instagram-card">
+            <div class="instagram-border"></div>
+            <p class="user-name">
+              <span><img src="./images/icon-instagram.svg" alt="" /></span
+              >@realnathanf
+            </p>
+            <p class="number-data">11k</p>
+            <p class="text">Followers</p>
+            <p class="days up">
+              <img src="./images/icon-up.svg" alt="" />1099 Today
+            </p>
+          </article>
+          <article class="stats-card youtube-card">
+            <p class="user-name">
+              <span><img src="./images/icon-youtube.svg" alt="" /></span>Nathan
+              F.
+            </p>
+            <p class="number-data">8239</p>
+            <p class="text">Subscribers</p>
+            <p class="days down">
+              <img src="./images/icon-down.svg" alt="" />144 Today
+            </p>
+          </article>
+        </section>
+        <p class="title2">Overview - Today</p>
+        <section class="stats2-container">
+          <article class="stats-card">
+            <p class="stat-name">
+              Page Views<span
+                ><img src="./images/icon-facebook.svg" alt=""
+              /></span>
+            </p>
+            <p class="number-data">
+              87
+              <span class="percentage up"
+                ><img src="./images/icon-up.svg" alt="" />3%</span
+              >
+            </p>
+          </article>
+          <article class="stats-card">
+            <p class="stat-name">
+              Likes<span><img src="./images/icon-facebook.svg" alt="" /></span>
+            </p>
+            <p class="number-data">
+              52
+              <span class="percentage down"
+                ><img src="./images/icon-down.svg" alt="" />2%</span
+              >
+            </p>
+          </article>
+          <article class="stats-card">
+            <p class="stat-name">
+              Likes<span><img src="./images/icon-instagram.svg" alt="" /></span>
+            </p>
+            <p class="number-data">
+              5462
+              <span class="percentage up"
+                ><img src="./images/icon-up.svg" alt="" /> 2257%</span
+              >
+            </p>
+          </article>
+          <article class="stats-card">
+            <p class="stat-name">
+              Profile Views<span
+                ><img src="./images/icon-instagram.svg" alt=""
+              /></span>
+            </p>
+            <p class="number-data">
+              52k
+              <span class="percentage up"
+                ><img src="./images/icon-up.svg" alt="" /> 1375%</span
+              >
+            </p>
+          </article>
+          <article class="stats-card">
+            <p class="stat-name">
+              Retweets<span
+                ><img src="./images/icon-twitter.svg" alt=""
+              /></span>
+            </p>
+            <p class="number-data">
+              117
+              <span class="percentage up"
+                ><img src="./images/icon-up.svg" alt="" />303%</span
+              >
+            </p>
+          </article>
+          <article class="stats-card">
+            <p class="stat-name">
+              Likes<span><img src="./images/icon-twitter.svg" alt="" /></span>
+            </p>
+            <p class="number-data">
+              507
+              <span class="percentage up"
+                ><img src="./images/icon-up.svg" alt="" /> 557%</span
+              >
+            </p>
+          </article>
+          <article class="stats-card">
+            <p class="stat-name">
+              Likes<span><img src="./images/icon-youtube.svg" alt="" /></span>
+            </p>
+            <p class="number-data">
+              107
+              <span class="percentage down"
+                ><img src="./images/icon-down.svg" alt="" /> 19%</span
+              >
+            </p>
+          </article>
+          <article class="stats-card">
+            <p class="stat-name">
+              Total Views<span
+                ><img src="./images/icon-youtube.svg" alt=""
+              /></span>
+            </p>
+            <p class="number-data">
+              1407
+              <span class="percentage down"
+                ><img src="./images/icon-down.svg" alt="" />12%</span
+              >
+            </p>
+          </article>
+        </section>
+      </main>
+    </div>
 
     <div class="attribution">
       Challenge by
