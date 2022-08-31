@@ -54,6 +54,7 @@ body {
 }
 
 .container {
+  margin-bottom: 24px;
   padding: 0 5%;
 }
 
@@ -66,16 +67,21 @@ header .subtitle {
   font-weight: 700;
 }
 
+header hr {
+  border-bottom: none;
+  border-color: var(--toggle);
+}
+
 .mode-box {
   margin-bottom: 24px;
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: center;
 }
 
 .mode-box p {
   margin: 0;
-  color: var(--dark-grayish-blue-text);
+  color: var(--toggle);
   font-weight: 700;
 }
 
@@ -100,11 +106,6 @@ header .subtitle {
   background-color: var(--white-bg);
   border-radius: 50%;
   outline: none;
-}
-
-header hr {
-  border-bottom: none;
-  border-color: var(--toggle);
 }
 
 .stats1-container {
@@ -237,4 +238,46 @@ header hr {
   gap: 4px;
   font-size: initial;
   font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 10%;
+  }
+
+  header {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header .title {
+    font-size: 28px;
+  }
+
+  .title-box {
+    flex: 2;
+  }
+
+  header hr {
+    display: none;
+  }
+
+  .mode-box {
+    flex: 1;
+    margin-bottom: 0;
+    justify-content: flex-end;
+    /* align-items: center; */
+    gap: 12px;
+  }
+
+  .stats1-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stats2-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
