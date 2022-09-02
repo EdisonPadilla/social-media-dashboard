@@ -13,7 +13,7 @@
 
   /* #### Dark Theme */
 
-  --toggle: linear-gradient (90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --toggle-dark: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 
   /* #### Light Theme */
 
@@ -50,21 +50,54 @@
 body {
   font-family: Inter, sans-serif;
   font-weight: 400;
-  color: var(--very-dark-blue-text);
 }
 
 .container {
   margin-bottom: 24px;
-  padding: 0 5%;
+  padding: 32px 5% 64px 5%;
+  color: var(--very-dark-blue-text);
+  background-color: var(--white-bg);
+  background: linear-gradient(
+    180deg,
+    var(--very-pale-blue-top-bgpattern) 280px,
+    var(--white-bg) 280px
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 300ms;
+}
+
+.container.dark {
+  color: var(--white-text);
+  background: var(--very-dark-blue-top-bgpattern);
+  background: linear-gradient(
+    180deg,
+    var(--very-dark-blue-top-bgpattern) 280px,
+    var(--very-dark-blue-bg) 280px
+  );
+}
+
+header {
+  margin-bottom: 24px;
 }
 
 header .title {
+  margin-top: 0;
   font-size: 24px;
+  font-weight: 700;
 }
 
-header .subtitle {
+.container .style2-text {
   color: var(--dark-grayish-blue-text);
   font-weight: 700;
+}
+
+.container .style2-text.dark {
+  color: var(--desaturated-blue-text);
+}
+
+.container .icon {
+  display: block;
 }
 
 header hr {
@@ -73,55 +106,72 @@ header hr {
 }
 
 .mode-box {
-  margin-bottom: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.mode-box p {
+.mode-box .style2-text:first-child {
   margin: 0;
-  color: var(--toggle);
-  font-weight: 700;
 }
 
 .btn-box {
-  position: relative;
   padding: 4px;
   width: 48px;
   min-width: 48px;
+  max-width: 48px;
   height: 28px;
-  min-height: 24px;
+  min-height: 28px;
+  max-height: 28px;
   background-color: var(--toggle);
   border-radius: 16px;
+  transition: all 300ms;
+}
+
+.btn-box.dark {
+  background-image: var(--toggle-dark);
 }
 
 .mode-btn {
-  position: absolute;
   width: 20px;
   min-width: 20px;
+  max-width: 20px;
   height: 20px;
   min-height: 20px;
+  max-height: 20px;
   border: none;
   background-color: var(--white-bg);
   border-radius: 50%;
   outline: none;
+  transition: all 300ms;
 }
 
-.stats1-container {
+.mode-btn.dark {
+  background-color: var(--very-dark-blue-bg);
+  transform: translateX(100%);
+}
+
+.stats1-container,
+.stats2-container {
   display: grid;
   grid-template-columns: 100%;
-  /* grid-template-rows: repeat(4, 1fr); */
   gap: 24px;
+}
+
+.container .stats-card {
+  border-top: 4px solid transparent;
+  background-color: var(--light-grayish-blue-cardbg);
+  border-radius: 4px;
+  transition: all 300ms;
+}
+
+.container .stats-card.dark {
+  background: var(--dark-desaturated-blue-cardbg);
 }
 
 .stats1-container .stats-card {
   padding: 36px 0;
   text-align: center;
-  border-top: 4px solid transparent;
-  border-radius: 4px;
-  background-color: var(--light-grayish-blue-cardbg);
-  /* overflow: hidden; */
 }
 
 .stats-card.facebook-card {
@@ -134,10 +184,9 @@ header hr {
 
 .stats-card.instagram-card {
   position: relative;
-  /* border: none; */
 }
 
-.instagram-card .instagram-border {
+.instagram-card .border {
   position: absolute;
   top: -4px;
   width: 100%;
@@ -151,39 +200,48 @@ header hr {
   border-color: var(--youTube);
 }
 
-.stats1-container .user-name {
+.stats1-container .user-name,
+.stats2-container .stat-name {
   margin-top: 0;
-  margin-bottom: 24px;
   display: flex;
+  align-items: center;
+}
+
+.stats1-container .user-name {
+  margin-bottom: 24px;
   justify-content: center;
   gap: 4px;
-  color: var(--dark-grayish-blue-text);
+}
+
+.container .number-data {
+  margin-top: 0;
+  margin-bottom: 0;
   font-weight: 700;
 }
 
 .stats1-container .number-data {
-  margin-top: 0;
-  /* margin-bottom: 6px; */
-  margin-bottom: 0;
   font-size: 64px;
-  font-weight: 700;
 }
 
-.text {
+.stats1-container .data-name {
   margin-top: 0;
   margin-bottom: 30px;
-  color: var(--dark-grayish-blue-text);
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 4px;
 }
 
-.days {
-  margin: 0;
+.days,
+.percentage {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 4px;
   font-weight: 700;
+}
+
+.days {
+  margin: 0;
 }
 
 .up {
@@ -195,58 +253,39 @@ header hr {
 }
 
 .title2 {
-  color: var(--dark-grayish-blue-text);
   font-size: 24px;
-  font-weight: 700;
 }
 
-.stats2-container {
-  display: grid;
-  grid-template-columns: 100%;
-  gap: 24px;
+.container .title2.dark {
+  color: var(--white-text);
 }
 
 .stats2-container .stats-card {
-  padding: 24px 24px;
-  background-color: var(--light-grayish-blue-cardbg);
-  border-radius: 4px;
+  padding: 24px;
 }
 
 .stats2-container .stat-name {
-  margin-top: 0;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
-  color: var(--dark-grayish-blue-text);
-  font-weight: 700;
 }
 
 .stats2-container .number-data {
-  margin-top: 0;
-  margin-bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 34px;
-  font-weight: 700;
 }
 
 .stats2-container .percentage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
   font-size: initial;
-  font-weight: 700;
 }
 
 @media (min-width: 1024px) {
   .container {
-    padding: 0 10%;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
   header {
-    margin-bottom: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -266,9 +305,7 @@ header hr {
 
   .mode-box {
     flex: 1;
-    margin-bottom: 0;
     justify-content: flex-end;
-    /* align-items: center; */
     gap: 12px;
   }
 
