@@ -102,7 +102,8 @@ header .title {
 
 header hr {
   border-bottom: none;
-  border-color: var(--toggle);
+  border-color: #898c9b;
+  border-width: thin;
 }
 
 .mode-box {
@@ -277,6 +278,47 @@ header hr {
 
 .stats2-container .percentage {
   font-size: initial;
+}
+
+.attribution {
+  margin: 16px 0;
+  font-size: 16px;
+  text-align: center;
+  color: var(--dark-grayish-blue-text);
+}
+
+.a-link {
+  color: var(--very-dark-blue-text);
+}
+
+.a-link-text {
+  position: relative;
+  padding: 4px 8px;
+}
+
+.a-link-text::before {
+  content: attr(text-value);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-text);
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transform: rotate(2deg);
+  transition: all 300ms;
+}
+
+.a-link:hover .a-link-text::before,
+.a-link:focus .a-link-text::before {
+  background-color: var(--dark-desaturated-blue-cardbg);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: rotate(-2deg);
 }
 
 @media (min-width: 1024px) {
