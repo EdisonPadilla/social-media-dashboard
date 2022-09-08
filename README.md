@@ -40,8 +40,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution repository](https://your-solution-url.com)
-- Live Site URL: [live site](https://your-live-site-url.com)
+- Solution URL: [solution repository](https://github.com/EdisonPadilla/social-media-dashboard)
+- Live Site URL: [live site](https://edisonpadilla.github.io/social-media-dashboard/)
 
 ## My process
 
